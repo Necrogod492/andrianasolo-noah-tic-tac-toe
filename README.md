@@ -3,42 +3,17 @@ Le TP est à rendre au plus tard **lundi 8 avril 2024, minuit**, par mail en sig
 
 Il vous est possible de vous entre-aider mais votre rendu est **personnel** sauf mention contraire expresse pour les situations identifiées en amont.
 
-## Instructions
+## Workflow
+### Gitflow
 
-### Préparer son environnement
-- A partir du docker-compose disponible sur le repository [docker-gitlab-jenkins](https://github.com/June-Ruth/docker-gitlab-jenkins)
+Gitflow est un modèle de gestion de branches pour Git, c'est un workflow qui définit un modèle de branching strict conçu autour de la sortie de version du projet. Voici un bref aperçu des points principaux qui caractérises Gitflow :
 
-### Récupérer le projet en local
-- Clôner le projet en local
-- Mettre en place le projet sur le GitLab local avec le nom formaté selon le schéma suivant : **_nom_prenom_tic-tac-toe_**
+Structuration des branches: Définit des branches spécifiques pour chaque étape du processus de développement.
 
-### Création d'une pipeline d'intégration et de déploiement
-La pipeline doit être formatée selon le schéma suivant : **_nom_prenom_tic-tac-toe_**
-#### Outils
-- La pipeline doit être éxécutée à partir de la plateforme d'intégration continue Jenkins
-#### Fréquence
-- La pipeline doit pouvoir être exécutée manuellement
-- La pipeline doit être exécutée à chaque action de push et de merge request
-##### Contenu
-- La pipeline doit exécuter les tests
-- Le stage de test doit mentionner le type de tests exéutés selon la pyramide des tests (soit dans son nom, soit dans la console lors de l'exécution)
-- La pipeline doit fournir un rapport de couverture Clover
-- La pipeline doit fournir les artefacts de distribution nécessaires au déploiement
+Isolation des fonctionnalités: Permet de travailler sur des fonctionnalités isolées sans perturber le reste du projet.
 
-### Correction des tests
-- Les tests non-validés par la pipeline doivent être corrigés afin d'être valides
+Gestion des versions simplifiée: Facilite la préparation et le test des versions avant leur déploiement.
 
-## Livrables
-- Le code final sera rendu disponible sur un repository public
-- La branche principale (main) sera à jour de l'ensemble des modifications
-- Le code final devra conserver l'historique des branches et commits
-- Le README présentera le workflow Git choisi en expliquant ses avantages et/ou inconvénients
-- Le repository disposera d'un package spécifique pour les documents issus de la pipeline :
-  - le rapport de couverture Clover fourni lors du dernier cycle Jenkins (format .html)
-  - une copie (format .pdf) du dashboard principal de la **pipeline** sur Jenkins présentant au moins un cycle exécuté de manière automatique, les artefacts issue du build et le résumé de la couverture Clover
-  - une copie (format .pdf) des paramètres mis en place sur GitLab servant à l'intégration de Jenkins
- 
-## Attention
-- Les projets qui ne respectent pas les conventions de nommage ne seront pas évalués.
-- Les projets dont l'historique git n'est pas accessible ne seront pas évalués.
-- Les repository innaccessibles (adresse erronée, settings non-public) ne seront pas évaluées.
+Correction rapide des problèmes: Permet de réagir rapidement aux problèmes critiques découverts dans la version de production.
+
+Visibilité du processus de développement: Offre une vue claire de l'état de chaque fonctionnalité dans le processus de développement.
